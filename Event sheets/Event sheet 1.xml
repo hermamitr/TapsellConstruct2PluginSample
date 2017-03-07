@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Coins" sid="405282544620409" static="0" type="number">0</variable>
+        <event-block sid="274355234982673">
+            <conditions>
+                <condition id="0" name="On clicked" sid="997901456327641" type="RequestAd" />
+            </conditions>
+            <actions>
+                <action id="0" name="requestAd" sid="561234098417478" type="TapsellSDKV3">
+                    <param id="0" name="Caching options">0</param>
+                    <param id="1" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="645759765375522">
+            <conditions>
+                <condition id="0" name="onAdAvailable" sid="833891222617943" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="820097096875668" type="ShowAd">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="0" name="Set text" sid="912769816963590" type="ShowAd">
+                    <param id="0" name="Text">&quot;Show Ad&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="483406912669607">
+            <conditions>
+                <condition id="1" name="onNoAdAvailable" sid="822949072483038" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="293729672979775" type="ShowAd">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="0" name="Set text" sid="823024661816860" type="ShowAd">
+                    <param id="0" name="Text">&quot;No Ad Available&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="685483731130306">
+            <conditions>
+                <condition id="3" name="onError" sid="498787911571079" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="430454346725610" type="ShowAd">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="0" name="Set text" sid="978492841310020" type="ShowAd">
+                    <param id="0" name="Text">&quot;Error Occured&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="201255070731883">
+            <conditions>
+                <condition id="4" name="onExpiring" sid="813053034117825" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="433797702563912" type="ShowAd">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="0" name="Set text" sid="397299343805181" type="ShowAd">
+                    <param id="0" name="Text">&quot;Ad Expired&quot;</param>
+                </action>
+                <action id="0" name="requestAd" sid="544889498355966" type="TapsellSDKV3">
+                    <param id="0" name="Caching options">0</param>
+                    <param id="1" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="185852873026536">
+            <conditions>
+                <condition id="2" name="onNoNetwork" sid="541129360638189" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="3" name="Set enabled" sid="481860741287195" type="ShowAd">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="0" name="Set text" sid="147488945085353" type="ShowAd">
+                    <param id="0" name="Text">&quot;No Network&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="431472552438792">
+            <conditions>
+                <condition id="0" name="On clicked" sid="643440374358959" type="ShowAd" />
+            </conditions>
+            <actions>
+                <action id="1" name="showAd" sid="574346832767894" type="TapsellSDKV3">
+                    <param id="0" name="Back Button">0</param>
+                    <param id="1" name="Immersive Mode">0</param>
+                    <param id="2" name="Rotation Mode">0</param>
+                    <param id="3" name="Warning Dialog">0</param>
+                    <param id="4" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="345190503268562">
+            <conditions>
+                <condition id="5" name="onAdShowFinished" sid="906102957647072" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="447016599840912" type="System">
+                    <param id="0" name="Variable">Coins</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="447994704107178" type="MyCoins">
+                    <param id="0" name="Text">&quot;My Coins: &quot; &amp; Coins</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="443257933733956">
+            <conditions>
+                <condition id="6" name="onAdShowCanceled" sid="817676617103870" type="TapsellSDKV3">
+                    <param id="0" name="ZoneId">&quot;58bd69744684657051a59242&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
